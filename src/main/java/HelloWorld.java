@@ -21,6 +21,7 @@ public class HelloWorld {
         employ1.empSalary(10000);
         employ1.printEmployee();
         System.out.println("return:"+employ1.empPr());
+        employ1.testWhile();
 
     }
 }
