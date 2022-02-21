@@ -1,5 +1,8 @@
 package main.java.employee;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 public class EmPloyee {
@@ -12,7 +15,7 @@ public class EmPloyee {
     char c = 'a';
     public static int sta = 1;
     String [][] sArr = {{"abc","cdf"},{"123","456"}};
-
+    String [] arrS = new String[3];
     public EmPloyee(String name){
         this.name = name;
     }
@@ -92,6 +95,8 @@ public class EmPloyee {
         }
     }
     public void testString(){
+        sArr[1][1] = "1";
+        arrS[0] = "2";
         char [] str = {'a','b','c'};
         String strArr = new String(str);
         String strAnd = "Ab123";
@@ -113,6 +118,42 @@ public class EmPloyee {
         System.out.println("将字符串Ab123转换为大写" + strAnd.toUpperCase());
         System.out.println("判断字符串是否为空：" + strAnd.isEmpty());
         System.out.println("多维数组：" + sArr[1][1]);
+        System.out.println("数组追加数据：arrS = " + arrS[1]);
         System.out.println("-----------");
+    }
+    public void dateTime() {
+        Date date = new Date();
+        // 使用SimpleDateFormat的format 格式化时间字符串
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println("使用SimpleDateFormat的format 格式化时间字符串-当前时间为：" + sdf.format(date));
+        // 使用printf格式化字符串
+        System.out.printf("tc包含全部日期信息-当前时间为：%tc\n", date);
+        System.out.printf("tF'年-月-日'格式，只展示日期-当前时间为：%tF\n", date);
+        System.out.printf("tD'年/月/日'格式，只展示日期-当前时间为：%tD\n", date);
+        System.out.printf("tr'HH:MM:SS PM'格式，以12小时制展示且只展示时间-当前时间为：%tr\n", date);
+        System.out.printf("tT'HH:MM:SS'格式，以24小时制展示且只展示时间-当前时间为：%tT\n", date);
+        System.out.printf("tR'HH:MM'格式，以24小时制展示且只展示时分-当前时间为：%tR\n", date);
+
+        String dateStr = "2022-03-01 15:34:01";
+        try {
+            // parse 将字符串解析成日期格式
+            Date de = sdf.parse(dateStr);
+            System.out.println(sdf.format(de));
+        } catch (ParseException ignored){
+            System.out.println("时间格式错误：" + sdf);
+        }
+
+        try {
+            // System.currentTimeMillis 获取当前时间的时间戳，或将时间格式转换为时间戳
+            long startDate = System.currentTimeMillis();
+            Thread.sleep(5*60*10);
+            long endDate = System.currentTimeMillis();
+            long resultDate = endDate-startDate;
+//            System.out.println("时间差计算："+ sdf.format(resultDate));
+            System.out.println("时间差计算：" + resultDate);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 }
