@@ -7,6 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.rmi.RemoteException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Scanner;
@@ -20,24 +21,30 @@ public class EmPloyee {
     int b = 0x64;
     char c = 'a';
     public static int sta = 1;
-    String [][] sArr = {{"abc","cdf"},{"123","456"}};
-    String [] arrS = new String[3];
-    public EmPloyee(String name){
+    String[][] sArr = {{"abc", "cdf"}, {"123", "456"}};
+    String[] arrS = new String[3];
+
+    public EmPloyee(String name) {
         this.name = name;
     }
-    public void empAge(int empAge){
+
+    public void empAge(int empAge) {
         age = empAge;
     }
-    public void empDesignation(String empDesig){
+
+    public void empDesignation(String empDesig) {
         designation = empDesig;
     }
-    public void empSalary(double empSalary){
+
+    public void empSalary(double empSalary) {
         salary = empSalary;
     }
-    public int empPr(){
+
+    public int empPr() {
         return age;
     }
-    public void printEmployee(){
+
+    public void printEmployee() {
         System.out.println("employee:name:" + name);
         System.out.println("employee:age:" + age);
         System.out.println("employee:designation:" + designation);
@@ -47,63 +54,65 @@ public class EmPloyee {
         System.out.println("char: c = " + c);
 
     }
-    public void testWhile(){
+
+    public void testWhile() {
         Integer w = 0;
-        while (w < 5){
+        while (w < 5) {
             System.out.println("while++前：" + w);
             w++;
             System.out.println("while++后:" + w);
         }
 
-        do{
+        do {
             System.out.println("do..while--前" + w);
             w--;
             System.out.println("do...while--后" + w);
-        }while (w>=0);
+        } while (w >= 0);
 
-        for(int i = 5; i > w;){
+        for (int i = 5; i > w; ) {
             System.out.println("for++前" + w);
             w++;
             System.out.println("for++后" + w);
         }
         //增强for循环
-        int [] x = {1,2,3,4,5};
-        for(int i : x){
-            System.out.println("x = " + x[i-1]);
+        int[] x = {1, 2, 3, 4, 5};
+        for (int i : x) {
+            System.out.println("x = " + x[i - 1]);
             System.out.println("i = " + i);
-            if (i == 3){
+            if (i == 3) {
                 break;
             }
         }
 
-        do{
+        do {
             w++;
-            if (w == 7){
+            if (w == 7) {
                 continue;
             }
             System.out.println("coutinue: w = " + w);
-        }while (w<10);
+        } while (w < 10);
 
-        switch (w){
-            case 7 : {
+        switch (w) {
+            case 7: {
                 System.out.println("switch case : " + w);
             }
-            case 9 : {
+            case 9: {
                 System.out.println("switch case : " + w);
             }
-            case 10 : {
+            case 10: {
                 System.out.println("switch case : " + w);
                 break;
             }
-            default:{
+            default: {
                 System.out.println("switch default : " + w);
             }
         }
     }
-    public void testString(){
+
+    public void testString() {
         sArr[1][1] = "1";
         arrS[0] = "2";
-        char [] str = {'a','b','c'};
+        char[] str = {'a', 'b', 'c'};
         String strArr = new String(str);
         String strAnd = "Ab123";
         int ingStr = 1;
@@ -112,8 +121,8 @@ public class EmPloyee {
         System.out.println("字符串拼接：strArr+strAnd : " + strArr.concat(strAnd));
         System.out.println("使用 + 拼接字符串strArr+strAnd ： " + strArr + strAnd);
         System.out.println("输出int：%f" + "输出字符串：%d" + ingStr + strArr);
-        System.out.format("使用format输出int：%d " + "输出字符串：%s\n" , ingStr , strArr);
-        System.out.printf("使用pringf输出int: %d " + "输出字符串：%s\n" , ingStr, strArr);
+        System.out.format("使用format输出int：%d " + "输出字符串：%s\n", ingStr, strArr);
+        System.out.printf("使用pringf输出int: %d " + "输出字符串：%s\n", ingStr, strArr);
         System.out.println("返回字符串strArrd的第二个字符：" + strArr.charAt(1));
         System.out.println("比较两个字符串的ASCLL码值大小：" + strArr.compareTo(strAnd));
         System.out.println("比较两个字符串是否相同：" + strArr.contentEquals("abc"));
@@ -127,7 +136,40 @@ public class EmPloyee {
         System.out.println("多维数组：" + sArr[1][1]);
         System.out.println("数组追加数据：arrS = " + arrS[1]);
         System.out.println("-----------");
+
+        int[] Iarr = {5, 3, 3, 3, 5, 6, 2};
+        int time = 2;
+        int num = 0;
+        // 可变数组 ArrayList
+        ArrayList<Integer> intArrList = new ArrayList<Integer>();
+        for (int i = 0; i < Iarr.length; i++) {
+            num++;
+            int l = num - time;
+            int r = Iarr.length - num - time;
+            if (l >= 0 & r >= 0) {
+                for (int j = 0; j < Iarr.length / 2; j++) {
+                    int lj = Iarr[j];
+                    int rj = Iarr[j + 1];
+                    int ln = Iarr[Iarr.length - num];
+                    int rn = Iarr[Iarr.length - (num + 1)];
+
+                    if (lj > rj & ln > rn) {
+                        System.out.println("第" + num + "天适合打劫，当天守卫人数为：" + Iarr[num - 1]);
+                        intArrList.add(num);
+                    }
+                }
+            }
+        }
+        System.out.println("适合打劫的天数数组：" + intArrList);
+        int nums = 8;
+        for (int i = 0; i < Iarr.length; i++) {
+            for (int j = i + 1; j < Iarr.length; j++)
+                if (Iarr[i] + Iarr[j] == nums) {
+                    System.out.println(i + "," + j);
+                }
+        }
     }
+
     public void dateTime() {
         Date date = new Date();
         // 使用SimpleDateFormat的format 格式化时间字符串
@@ -151,47 +193,48 @@ public class EmPloyee {
             System.out.println("时间格式转换为时间戳(毫秒级)" + deOne.getTime());
             int comPare = deOne.compareTo(deTwo);
 
-            if (comPare > 0){
+            if (comPare > 0) {
                 System.out.println("compareTo时间比较：deOne > deTwo");
-            }else if (comPare < 0){
+            } else if (comPare < 0) {
                 System.out.println("compareTo时间比较：deOne < deTwo");
-            }else {
+            } else {
                 System.out.println("compareTo时间比较：deOne = deTwo");
             }
 
-            if (deOne.after(deTwo)){
+            if (deOne.after(deTwo)) {
                 System.out.println("after时间比较(deOne必须大于deTwo)：deOne > deTwo");
-            }else {
+            } else {
                 System.out.println("after时间比较(deOne必须大于deTwo)：deOne <= deTwo");
             }
 
-            if (deOne.before(deTwo)){
+            if (deOne.before(deTwo)) {
                 System.out.println("before时间比较(deOne必须小于deTwo)：deOne < deTwo");
-            }else {
+            } else {
                 System.out.println("before时间比较(deOne必须小于deTwo)：deOne >= deTwo");
             }
 
-        } catch (ParseException ignored){
+        } catch (ParseException ignored) {
             System.out.println("时间格式错误：" + sdf);
         }
 
         try {
             // System.currentTimeMillis 获取当前时间的时间戳，或将时间格式转换为时间戳
             long startDate = System.currentTimeMillis();
-            Thread.sleep(5*60*10);
+            Thread.sleep(5 * 60 * 10);
             long endDate = System.currentTimeMillis();
-            long resultDate = endDate-startDate;
+            long resultDate = endDate - startDate;
 //            System.out.println("时间差计算："+ sdf.format(resultDate));
-            System.out.println("时间差计算sleep3秒：" + resultDate/1000);
+            System.out.println("时间差计算sleep3秒：" + resultDate / 1000);
             System.out.println("时间戳转换为时间：" + sdf.format(endDate));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        bak:for(int i = 0; i <10; i++){
+        bak:
+        for (int i = 0; i < 10; i++) {
             System.out.println("外循环：" + i);
-            for (int n =0; n < 10; n++){
-                System.out.println("内循环："+ n);
-                if (n > 5 & i > 2){
+            for (int n = 0; n < 10; n++) {
+                System.out.println("内循环：" + n);
+                if (n > 5 & i > 2) {
                     System.out.println("break取别名跳出外循环");
                     break bak;
                 }
@@ -199,6 +242,7 @@ public class EmPloyee {
         }
         System.out.println("----------------");
     }
+
     public void input() throws IOException {
         /**
          * 两种获取控制台输入的方式
@@ -230,7 +274,8 @@ public class EmPloyee {
 //        }
 
     }
-    public void ioInput()throws IOException {
+
+    public void ioInput() throws IOException {
         String filestr = "123456";
         // 构建FileOutputStream对象,文件不存在会自动新建
         FileOutputStream fops = new FileOutputStream("test.txt");
@@ -263,14 +308,15 @@ public class EmPloyee {
         fips.close();
 
     }
-    public void exceptions()throws IntSizeOutException {
-        int [] arrInt = {1,2,3};
-        try{
+
+    public void exceptions() throws IntSizeOutException {
+        int[] arrInt = {1, 2, 3};
+        try {
             System.out.println(arrInt[2]);
-        }catch (ArrayIndexOutOfBoundsException e){
+        } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println(e);
             e.printStackTrace();
-        }finally{
+        } finally {
             System.out.println("finally");
         }
 
@@ -280,9 +326,9 @@ public class EmPloyee {
         double numOne = scan.nextDouble();
         System.out.println("请输入第二个整数");
         double numTwo = scan.nextDouble();
-        if (numOne >= numTwo){
+        if (numOne >= numTwo) {
             System.out.println("第一个数小于等于第二个数");
-        }else {
+        } else {
             double needs = numOne - numTwo;
             throw new IntSizeOutException(needs);
         }
