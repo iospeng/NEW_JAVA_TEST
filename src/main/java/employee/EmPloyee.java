@@ -1,9 +1,12 @@
 package main.java.employee;
 
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Scanner;
 
 public class EmPloyee {
     String name;
@@ -116,6 +119,7 @@ public class EmPloyee {
         System.out.println("equalsIgnoreCase比较两个字符串是否相同不区分大小写：" + strAnd.equalsIgnoreCase("A123"));
         System.out.println("将字符串Ab123转换为小写：" + strAnd.toLowerCase());
         System.out.println("将字符串Ab123转换为大写" + strAnd.toUpperCase());
+        System.out.println("判断字符串：strAnd是否包含字符串ab:" + strAnd.contains("123"));
         System.out.println("判断字符串是否为空：" + strAnd.isEmpty());
         System.out.println("多维数组：" + sArr[1][1]);
         System.out.println("数组追加数据：arrS = " + arrS[1]);
@@ -134,11 +138,36 @@ public class EmPloyee {
         System.out.printf("tT'HH:MM:SS'格式，以24小时制展示且只展示时间-当前时间为：%tT\n", date);
         System.out.printf("tR'HH:MM'格式，以24小时制展示且只展示时分-当前时间为：%tR\n", date);
 
-        String dateStr = "2022-03-01 15:34:01";
+        String dateStr = "2022-03-28 15:34:01";
+        String dateTwo = "2022-02-28 15:34:01";
         try {
             // parse 将字符串解析成日期格式
-            Date de = sdf.parse(dateStr);
-            System.out.println(sdf.format(de));
+            Date deOne = sdf.parse(dateStr);
+            Date deTwo = sdf.parse(dateTwo);
+            System.out.println(sdf.format(deOne));
+            System.out.println("时间格式转换为时间戳(毫秒级)" + deOne.getTime());
+            int comPare = deOne.compareTo(deTwo);
+
+            if (comPare > 0){
+                System.out.println("compareTo时间比较：deOne > deTwo");
+            }else if (comPare < 0){
+                System.out.println("compareTo时间比较：deOne < deTwo");
+            }else {
+                System.out.println("compareTo时间比较：deOne = deTwo");
+            }
+
+            if (deOne.after(deTwo)){
+                System.out.println("after时间比较(deOne必须大于deTwo)：deOne > deTwo");
+            }else {
+                System.out.println("after时间比较(deOne必须大于deTwo)：deOne <= deTwo");
+            }
+
+            if (deOne.before(deTwo)){
+                System.out.println("before时间比较(deOne必须小于deTwo)：deOne < deTwo");
+            }else {
+                System.out.println("before时间比较(deOne必须小于deTwo)：deOne >= deTwo");
+            }
+
         } catch (ParseException ignored){
             System.out.println("时间格式错误：" + sdf);
         }
@@ -150,10 +179,75 @@ public class EmPloyee {
             long endDate = System.currentTimeMillis();
             long resultDate = endDate-startDate;
 //            System.out.println("时间差计算："+ sdf.format(resultDate));
-            System.out.println("时间差计算：" + resultDate);
+            System.out.println("时间差计算sleep3秒：" + resultDate/1000);
+            System.out.println("时间戳转换为时间：" + sdf.format(endDate));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        bak:for(int i = 0; i <10; i++){
+            System.out.println("外循环：" + i);
+            for (int n =0; n < 10; n++){
+                System.out.println("内循环："+ n);
+                if (n > 5 & i > 2){
+                    System.out.println("break取别名跳出外循环");
+                    break bak;
+                }
+            }
+        }
+        System.out.println("----------------");
+    }
+    public void input() throws IOException {
+        /**
+         * 两种获取控制台输入的方式
+         * 1.ByfferedReader类
+         * 2.Scanner类
+         * */
+        // read readLine 不能同时使用
+//        BufferedReader BufDer = new BufferedReader(new InputStreamReader(System.in));
+//        System.out.print("请输入字符：");
+//        char c = (char)BufDer.read();
+//        System.out.println(c);
+//        System.out.print("请输入字符串：");
+//        String str = BufDer.readLine();
+//        System.out.println(str);
+
+//        Scanner scan = new Scanner(System.in);
+//        String str1 = scan.nextLine();
+//        System.out.println(str1);
 
     }
+    public void ioInput()throws IOException {
+        String filestr = "123456";
+        // 构建FileOutputStream对象,文件不存在会自动新建
+        FileOutputStream fops = new FileOutputStream("test.txt");
+        // 构建OutputStreamWriter对象,参数可以指定编码,默认为操作系统默认编码,windows上是gbk
+        OutputStreamWriter writer = new OutputStreamWriter(fops, StandardCharsets.UTF_8);
+        //调用append写入缓冲区
+        writer.append(filestr);
+        writer.append("\nhelloword");
+        //关闭输入流，并将缓冲区内容写入文件
+        writer.close();
+        // 关闭输出流,释放系统资源
+        fops.close();
+
+        // 构建FileInputStream对象,指定读取文件路径
+        FileInputStream fips = new FileInputStream("test.txt");
+        // 构建InputStreamReader对象,编码与写入相同，设置读取格式
+        InputStreamReader Ipsr = new InputStreamReader(fips, StandardCharsets.UTF_8);
+        // 创建StringBuffer 字符串对象，用于存储读取内容
+        StringBuffer strB = new StringBuffer();
+        /**
+         * 循环读取文件内容，并放入StrB中，读取一次只读取一个字符
+         * ready（）返回布尔值，文件不为空返回true，否则返回false
+         */
+
+        while (Ipsr.ready()) {
+            strB.append((char) Ipsr.read());
+        }
+        System.out.println(strB);
+        Ipsr.close();
+        fips.close();
+
+    }
+
 }

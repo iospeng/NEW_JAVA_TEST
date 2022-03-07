@@ -2,9 +2,11 @@ package main.java;
 
 import main.java.employee.EmPloyee;
 
+import java.io.IOException;
+
 public class HelloWorld {
     static int a = 1;
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Hello World");
         System.out.println("修改前的a: " + a);
         a = 2;
@@ -33,7 +35,8 @@ public class HelloWorld {
         employ1.testString();
 
         employ.dateTime();
-
+        employ.input();
+        employ.ioInput();
 
     }
 }
