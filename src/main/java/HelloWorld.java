@@ -2,6 +2,9 @@ package main.java;
 
 import main.java.customException.IntSizeOutException;
 import main.java.employee.EmPloyee;
+import main.java.employee.Man;
+import main.java.employee.Person;
+import main.java.employee.WoMan;
 
 import java.io.IOException;
 
@@ -44,5 +47,14 @@ public class HelloWorld {
             System.out.println("第一个数小于第二个数：" + e.getNum());
             e.printStackTrace();
         }
+        //继承
+        Person ps = new Person("张三","男",26);
+        ps.hello();
+        Man man = new Man("王五","男",25);
+        man.hello();
+        man.workMan();
+        WoMan wm = new WoMan("李四","女",23);
+        wm.hello();
+        wm.woManCook();
     }
 }
