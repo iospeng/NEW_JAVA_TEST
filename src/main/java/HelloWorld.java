@@ -50,7 +50,7 @@ public class HelloWorld {
         //继承
         Person ps = new Person("张三","男",26);
         ps.hello();
-        Man man = new Man("王五","男",25);
+        Man man = new Man("王五","男",25,10000);
         man.hello();
         man.workMan();
         WoMan wm = new WoMan("李四","女",23);

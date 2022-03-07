@@ -10,5 +10,4 @@ public class IntSizeOutException extends Exception {
     public double getNum(){
         return num;
     }
-
 }

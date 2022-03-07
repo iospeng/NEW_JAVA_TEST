@@ -274,7 +274,7 @@ public class EmPloyee {
             System.out.println("finally");
         }
 
-        // 使用自定义异常类，抛出自定义异常
+        //调用自定义异常类
         Scanner scan = new Scanner(System.in);
         System.out.println("请输入第一个整数：");
         double numOne = scan.nextDouble();
