@@ -1,5 +1,6 @@
 package main.java;
 
+import main.java.customException.IntSizeOutException;
 import main.java.employee.EmPloyee;
 
 import java.io.IOException;
@@ -37,6 +38,11 @@ public class HelloWorld {
         employ.dateTime();
         employ.input();
         employ.ioInput();
-
+        try {
+            employ.exceptions();
+        }catch (IntSizeOutException e){
+            System.out.println("第一个数小于第二个数：" + e.getNum());
+            e.printStackTrace();
+        }
     }
 }

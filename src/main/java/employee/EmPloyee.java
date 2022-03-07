@@ -1,7 +1,10 @@
 package main.java.employee;
 
+import main.java.customException.IntSizeOutException;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
+import java.rmi.RemoteException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -212,8 +215,19 @@ public class EmPloyee {
 //        System.out.println(str);
 
 //        Scanner scan = new Scanner(System.in);
-//        String str1 = scan.nextLine();
-//        System.out.println(str1);
+//        String str1 = null;
+//        System.out.println("请输入类容：");
+//        if (scan.hasNextLine()){
+//            str1 = scan.nextLine();
+//            System.out.println("您输入的内容：" + str1);
+//        }
+//        System.out.println("请输入整数：");
+//        if (scan.hasNextInt()){
+//            int i = scan.nextInt();
+//            System.out.println("您输入的整数：" + i);
+//        }else {
+//            System.out.println("请输入整数");
+//        }
 
     }
     public void ioInput()throws IOException {
@@ -248,6 +262,30 @@ public class EmPloyee {
         Ipsr.close();
         fips.close();
 
+    }
+    public void exceptions()throws IntSizeOutException {
+        int [] arrInt = {1,2,3};
+        try{
+            System.out.println(arrInt[2]);
+        }catch (ArrayIndexOutOfBoundsException e){
+            System.out.println(e);
+            e.printStackTrace();
+        }finally{
+            System.out.println("finally");
+        }
+
+        // 使用自定义异常类，抛出自定义异常
+        Scanner scan = new Scanner(System.in);
+        System.out.println("请输入第一个整数：");
+        double numOne = scan.nextDouble();
+        System.out.println("请输入第二个整数");
+        double numTwo = scan.nextDouble();
+        if (numOne >= numTwo){
+            System.out.println("第一个数小于等于第二个数");
+        }else {
+            double needs = numOne - numTwo;
+            throw new IntSizeOutException(needs);
+        }
     }
 
 }
