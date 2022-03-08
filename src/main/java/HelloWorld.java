@@ -1,10 +1,7 @@
 package main.java;
 
 import main.java.customException.IntSizeOutException;
-import main.java.employee.EmPloyee;
-import main.java.employee.Man;
-import main.java.employee.Person;
-import main.java.employee.WoMan;
+import main.java.employee.*;
 
 import java.io.IOException;
 
@@ -52,9 +49,29 @@ public class HelloWorld {
         ps.hello();
         Man man = new Man("王五","男",25,10000);
         man.hello();
+        man.sleeps();
         man.workMan();
         WoMan wm = new WoMan("李四","女",23);
         wm.hello();
         wm.woManCook();
+        wm.woManCook();
+        wm.woManCook("woman");
+        //接口类
+        ExamleOfInterface eoi = new ExamleOfInterface();
+        eoi.eat();
+        ExamlePersonOfInterface person = new ExamlePersonOfInterface();
+        person.personName("person");
+        person.eat();
+        person.work();
+        ExamleManOfInterface mans = new ExamleManOfInterface();
+        mans.manName("man");
+        mans.personName("man person");
+        mans.eat();
+        mans.work();
+        ExamleWoManOfInterface WoMan = new ExamleWoManOfInterface();
+        WoMan.WoManName();
+        WoMan.dog();
+        WoMan.work();
+        WoMan.eat();
     }
 }
