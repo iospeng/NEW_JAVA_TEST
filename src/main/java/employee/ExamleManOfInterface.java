@@ -22,4 +22,13 @@ public class ExamleManOfInterface implements ManOfInterface {
     public void work() {
         System.out.println("Man接口实现类，实现父类接口Person的父类接口nameOfInterface方法 work");
     }
+
+    //方法重载
+    public void gitMax(int a, int b) {
+        System.out.println(a+b + "方法重载");
+    }
+
+    public void  gitMax(String a){
+        System.out.println(a + "方法重载");
+    }
 }

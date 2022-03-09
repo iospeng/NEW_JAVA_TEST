@@ -10,7 +10,7 @@ public class WoMan extends Person {
     }
 
     //重载父类的方法
-    public void woManCook(String name){
+    public void woManCook(String name) {
         System.out.println(name + "正在睡觉");
     }
 }

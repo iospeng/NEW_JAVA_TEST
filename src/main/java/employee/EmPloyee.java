@@ -330,6 +330,7 @@ public class EmPloyee {
             System.out.println("第一个数小于等于第二个数");
         } else {
             double needs = numOne - numTwo;
+            // 使用throw 抛出异常
             throw new IntSizeOutException(needs);
         }
     }

@@ -7,6 +7,7 @@ import java.io.IOException;
 
 public class HelloWorld {
     static int a = 1;
+
     public static void main(String[] args) throws IOException {
         System.out.println("Hello World");
         System.out.println("修改前的a: " + a);
@@ -25,13 +26,13 @@ public class HelloWorld {
         employ.empDesignation("员工");
         employ.empSalary(1000);
         employ.printEmployee();
-        System.out.println("return:"+employ.empPr());
+        System.out.println("return:" + employ.empPr());
 
         employ1.empAge(30);
         employ1.empDesignation("经理");
         employ1.empSalary(10000);
         employ1.printEmployee();
-        System.out.println("return:"+employ1.empPr());
+        System.out.println("return:" + employ1.empPr());
         employ1.testWhile();
         employ1.testString();
 
@@ -40,18 +41,18 @@ public class HelloWorld {
         employ.ioInput();
         try {
             employ.exceptions();
-        }catch (IntSizeOutException e){
+        } catch (IntSizeOutException e) {
             System.out.println("第一个数小于第二个数：" + e.getNum());
             e.printStackTrace();
         }
         //继承
-        Person ps = new Person("张三","男",26);
+        Person ps = new Person("张三", "男", 26);
         ps.hello();
-        Man man = new Man("王五","男",25,10000);
+        Man man = new Man("王五", "男", 25, 10000);
         man.hello();
         man.sleeps();
         man.workMan();
-        WoMan wm = new WoMan("李四","女",23);
+        WoMan wm = new WoMan("李四", "女", 23);
         wm.hello();
         wm.woManCook();
         wm.woManCook();
@@ -68,6 +69,9 @@ public class HelloWorld {
         mans.personName("man person");
         mans.eat();
         mans.work();
+        // 接口实现类中重载方法
+        mans.gitMax("String");
+        mans.gitMax(1, 2);
         ExamleWoManOfInterface WoMan = new ExamleWoManOfInterface();
         WoMan.WoManName();
         WoMan.dog();
@@ -79,5 +83,9 @@ public class HelloWorld {
         lt.LinkedTests();
         lt.ArrayListTest();
         lt.HashSetTest();
+
+
+        TestCase tc = new TestCase();
+        tc.sum();
     }
 }
