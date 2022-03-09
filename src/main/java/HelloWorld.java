@@ -73,5 +73,11 @@ public class HelloWorld {
         WoMan.dog();
         WoMan.work();
         WoMan.eat();
+        ColorTest ct = new ColorTest();
+        ct.choice();
+        ListTest lt = new ListTest();
+        lt.LinkedTests();
+        lt.ArrayListTest();
+        lt.HashSetTest();
     }
 }

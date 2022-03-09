@@ -1,6 +1,6 @@
 package main.java.employee;
 
-import main.java.employee.Interface.WoManOfInterface;
+import main.java.Interface.WoManOfInterface;
 
 public class ExamleWoManOfInterface implements WoManOfInterface {
     @Override

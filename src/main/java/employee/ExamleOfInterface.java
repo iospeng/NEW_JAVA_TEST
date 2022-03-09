@@ -1,9 +1,6 @@
 package main.java.employee;
 
-import main.java.employee.Interface.ManOfInterface;
-import main.java.employee.Interface.PersonOfInterface;
-import main.java.employee.Interface.WoManOfInterface;
-import main.java.employee.Interface.nameOfInterface;
+import main.java.Interface.nameOfInterface;
 
 public class ExamleOfInterface implements nameOfInterface {
     public void eat(){
