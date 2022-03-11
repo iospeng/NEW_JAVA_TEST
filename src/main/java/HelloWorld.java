@@ -34,6 +34,7 @@ public class HelloWorld {
         employ1.printEmployee();
         System.out.println("return:" + employ1.empPr());
         employ1.testWhile();
+        employ1.testInt();
         employ1.testString();
 
         employ.dateTime();
@@ -87,5 +88,6 @@ public class HelloWorld {
 
         TestCase tc = new TestCase();
         tc.sum();
+
     }
 }

@@ -3,8 +3,10 @@ package main.java.employee;
 import main.java.customException.IntSizeOutException;
 
 import java.io.*;
+import java.math.RoundingMode;
 import java.nio.charset.StandardCharsets;
 import java.rmi.RemoteException;
+import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -107,6 +109,16 @@ public class EmPloyee {
                 System.out.println("switch default : " + w);
             }
         }
+    }
+
+    public void testInt() {
+//        System.out.format("保留两位小数%-10.2f\n", 0.234);
+        DecimalFormat df = new DecimalFormat("##.00");
+        df.setRoundingMode(RoundingMode.HALF_UP);
+        float a = 10.088f;
+        float b = 1.01f;
+        float sum = a + b;
+        System.out.println("保留两位小数：" + df.format(sum));
     }
 
     public void testString() {
