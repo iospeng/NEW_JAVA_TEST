@@ -2,13 +2,14 @@ package main.java;
 
 import main.java.customException.IntSizeOutException;
 import main.java.employee.*;
+import main.java.employee.Sport.testCase;
 import main.java.employee.StudentAdmin.StudentOperation;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class HelloWorld {
-    static int a = 1;
-
+    int a = 1;
     public static void main(String[] args) throws IOException {
 //        System.out.println("Hello World");
 //        System.out.println("修改前的a: " + a);
@@ -89,8 +90,13 @@ public class HelloWorld {
 //
 //        TestCase tc = new TestCase();
 //        tc.sum();
-        StudentOperation sop = new StudentOperation();
-        sop.home();
-
+//        StudentOperation sop = new StudentOperation();
+//        sop.home();
+        //运动员学习功能 运用接口、抽象类
+        testCase tc = new testCase();
+        tc.TableTennisCoach();
+        tc.TableTennisAthletes();
+        tc.BasketballCoach();
+        tc.BasketballAthletes();
     }
 }
