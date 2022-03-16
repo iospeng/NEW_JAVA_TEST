@@ -2,7 +2,13 @@ package main.java;
 
 import main.java.customException.IntSizeOutException;
 import main.java.employee.*;
+import main.java.employee.Generics.GenericsClass;
+import main.java.employee.Generics.GenericsTest;
+import main.java.employee.HttpInterface.GreetingServer;
+import main.java.employee.HttpInterface.SocketServer;
+import main.java.employee.HttpInterface.TestController;
 import main.java.employee.StudentAdmin.StudentOperation;
+import main.java.employee.TestTree.MyTreeClient;
 
 import java.io.IOException;
 
@@ -85,12 +91,29 @@ public class HelloWorld {
 //        lt.LinkedTests();
 //        lt.ArrayListTest();
 //        lt.HashSetTest();
-//
-//
+//        lt.HashMapList();
 //        TestCase tc = new TestCase();
 //        tc.sum();
-        StudentOperation sop = new StudentOperation();
-        sop.home();
-
+        //学生管理系统相关
+//        StudentOperation sop = new StudentOperation();
+//        sop.home();
+//        GenericsClass<String> gc = new GenericsClass<String>();
+//        gc.printT("123");
+//        GenericsClass<Integer> gcInt = new GenericsClass<Integer>();
+//        gcInt.printT(123);
+//        int port = Integer.parseInt(args[0]);
+//        try {
+//            Thread t = new GreetingServer(port);
+//            t.run();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        TestController tcl = new TestController();
+//        tcl.testInetAddress();
+        // Socket
+//        SocketServer sks = new SocketServer();
+//        sks.serverS();
+        MyTreeClient mtc = new MyTreeClient();
+        mtc.treeClient();
     }
 }
