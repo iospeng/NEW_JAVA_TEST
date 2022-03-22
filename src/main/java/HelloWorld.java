@@ -1,5 +1,7 @@
 package main.java;
 
+import main.java.SingleInstence.hungrySingleInstence;
+import main.java.SingleInstence.lazySingleInstence;
 import main.java.customException.IntSizeOutException;
 import main.java.employee.*;
 import main.java.employee.Generics.GenericsClass;
@@ -113,7 +115,12 @@ public class HelloWorld {
         // Socket
 //        SocketServer sks = new SocketServer();
 //        sks.serverS();
-        MyTreeClient mtc = new MyTreeClient();
-        mtc.treeClient();
+//        MyTreeClient mtc = new MyTreeClient();
+//        mtc.treeClient();
+        //单例
+        hungrySingleInstence hsi = hungrySingleInstence.hsi;
+        hsi.print();
+        lazySingleInstence lsi = lazySingleInstence.getLazy();
+        lsi.print();
     }
 }

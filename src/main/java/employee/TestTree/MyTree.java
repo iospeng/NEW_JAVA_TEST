@@ -120,5 +120,6 @@ public class MyTree<T> {
         Arrays.fill(nodes, null);
         this.nodes = newNodes;
         System.out.println("enlarge");
+        System.out.println("扩容后的nodes：" + nodes);
     }
 }
