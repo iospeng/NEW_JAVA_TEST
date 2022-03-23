@@ -1,5 +1,6 @@
 package main.java;
 
+import main.java.CodeBlock.StaticCodeBlock;
 import main.java.SingleInstence.hungrySingleInstence;
 import main.java.SingleInstence.lazySingleInstence;
 import main.java.customException.IntSizeOutException;
@@ -122,5 +123,7 @@ public class HelloWorld {
         hsi.print();
         lazySingleInstence lsi = lazySingleInstence.getLazy();
         lsi.print();
+        //静态代码块的使用
+        StaticCodeBlock scb = new StaticCodeBlock();
     }
 }
