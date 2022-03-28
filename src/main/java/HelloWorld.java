@@ -2,15 +2,19 @@ package main.java;
 
 import main.java.customException.IntSizeOutException;
 import main.java.employee.*;
+import main.java.employee.Reflex.ReflexCase;
+import main.java.employee.Reflex.testPersongReflex;
 import main.java.employee.Sport.testCase;
 import main.java.employee.StudentAdmin.StudentOperation;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
 
 public class HelloWorld {
     int a = 1;
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 //        System.out.println("Hello World");
 //        System.out.println("修改前的a: " + a);
 //        a = 2;
@@ -93,10 +97,27 @@ public class HelloWorld {
 //        StudentOperation sop = new StudentOperation();
 //        sop.home();
         //运动员学习功能 运用接口、抽象类
-        testCase tc = new testCase();
-        tc.TableTennisCoach();
-        tc.TableTennisAthletes();
-        tc.BasketballCoach();
-        tc.BasketballAthletes();
+//        testCase tc = new testCase();
+//        tc.TableTennisCoach();
+//        tc.TableTennisAthletes();
+//        tc.BasketballCoach();
+//        tc.BasketballAthletes();
+//        testPersongReflex tpr = new testPersongReflex();
+//        tpr.testReflex();
+        //反射实例
+//        ReflexCase rc = new ReflexCase();
+//        rc.testCase();
+        String num = "";
+        Random sc = new Random();
+        String date = "abcdefg123456";
+        for (int i = 0; i < 5; i++) {
+            int index = sc.nextInt(date.length());
+            num += date.charAt(index);
+        }
+        System.out.println(num);
+
+        String strss = "123@qq.com";
+        System.out.println(strss.matches("\\w{1,30}@[a-zA-Z0-9]{2,20}(\\.[a-zA-Z0-9]{2,20}){1,2}"));
+
     }
 }

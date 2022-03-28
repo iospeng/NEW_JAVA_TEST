@@ -25,6 +25,8 @@ public class testCase {
         System.out.println(bbc.getName() + "," + bbc.getAge());
         bbc.eat();
         bbc.CoachTeaching();
+
+
     }
 
     //篮球运动员吃饭、学篮球
