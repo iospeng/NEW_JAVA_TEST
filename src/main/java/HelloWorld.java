@@ -1,20 +1,23 @@
 package main.java;
 
+import main.java.SingleInstence.hungrySingleInstence;
+import main.java.SingleInstence.lazySingleInstence;
 import main.java.customException.IntSizeOutException;
 import main.java.employee.*;
-import main.java.employee.Reflex.ReflexCase;
-import main.java.employee.Reflex.testPersongReflex;
-import main.java.employee.Sport.testCase;
+import main.java.employee.Generics.GenericsClass;
+import main.java.employee.Generics.GenericsTest;
+import main.java.employee.HttpInterface.GreetingServer;
+import main.java.employee.HttpInterface.SocketServer;
+import main.java.employee.HttpInterface.TestController;
 import main.java.employee.StudentAdmin.StudentOperation;
+import main.java.employee.TestTree.MyTreeClient;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
 
 public class HelloWorld {
-    int a = 1;
-    public static void main(String[] args) throws Exception {
+    static int a = 1;
+
+    public static void main(String[] args) throws IOException {
 //        System.out.println("Hello World");
 //        System.out.println("修改前的a: " + a);
 //        a = 2;
@@ -90,34 +93,34 @@ public class HelloWorld {
 //        lt.LinkedTests();
 //        lt.ArrayListTest();
 //        lt.HashSetTest();
-//
-//
+//        lt.HashMapList();
 //        TestCase tc = new TestCase();
 //        tc.sum();
+        //学生管理系统相关
 //        StudentOperation sop = new StudentOperation();
 //        sop.home();
-        //运动员学习功能 运用接口、抽象类
-//        testCase tc = new testCase();
-//        tc.TableTennisCoach();
-//        tc.TableTennisAthletes();
-//        tc.BasketballCoach();
-//        tc.BasketballAthletes();
-//        testPersongReflex tpr = new testPersongReflex();
-//        tpr.testReflex();
-        //反射实例
-//        ReflexCase rc = new ReflexCase();
-//        rc.testCase();
-        String num = "";
-        Random sc = new Random();
-        String date = "abcdefg123456";
-        for (int i = 0; i < 5; i++) {
-            int index = sc.nextInt(date.length());
-            num += date.charAt(index);
-        }
-        System.out.println(num);
-
-        String strss = "123@qq.com";
-        System.out.println(strss.matches("\\w{1,30}@[a-zA-Z0-9]{2,20}(\\.[a-zA-Z0-9]{2,20}){1,2}"));
-
+//        GenericsClass<String> gc = new GenericsClass<String>();
+//        gc.printT("123");
+//        GenericsClass<Integer> gcInt = new GenericsClass<Integer>();
+//        gcInt.printT(123);
+//        int port = Integer.parseInt(args[0]);
+//        try {
+//            Thread t = new GreetingServer(port);
+//            t.run();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//        TestController tcl = new TestController();
+//        tcl.testInetAddress();
+        // Socket
+//        SocketServer sks = new SocketServer();
+//        sks.serverS();
+//        MyTreeClient mtc = new MyTreeClient();
+//        mtc.treeClient();
+        //单例
+        hungrySingleInstence hsi = hungrySingleInstence.hsi;
+        hsi.print();
+        lazySingleInstence lsi = lazySingleInstence.getLazy();
+        lsi.print();
     }
 }
