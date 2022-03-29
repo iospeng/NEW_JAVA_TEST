@@ -27,9 +27,13 @@ public class StaticCodeBlock {
                 brand.add(str);
             }
         }
+
         brand.add("大王");
         brand.add("小王");
         System.out.println(brand);
     }
-    
+    //非静态代码块
+    {
+        System.out.println("非静态代码块");
+    }
 }
