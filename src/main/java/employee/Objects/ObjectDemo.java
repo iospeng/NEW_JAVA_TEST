@@ -50,9 +50,4 @@ public class ObjectDemo {
         ObjectDemo that = (ObjectDemo) o;
         return age == that.age;
     }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(age);
-    }
 }
