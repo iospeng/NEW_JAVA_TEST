@@ -2,6 +2,7 @@ package main.java.employee.CollectionCase;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.function.Consumer;
 
@@ -14,6 +15,11 @@ public class FilmDemo {
         cll.add(new Film("海贼王","路飞",9.9));
         cll.add(new Film("火影","乌漆嘛黑拿呢托",9.8));
         cll.add(new Film("死神","一护",9.7));
+
+        Collection<Film> cll1 = new HashSet<>();
+        cll1.add(new Film("海贼王","路飞",9.9));
+        cll1.add(new Film("火影","乌漆嘛黑拿呢托",9.8));
+        cll1.add(new Film("死神","一护",9.7));
 
         //遍历集合的三种方式
         //方式一：迭代器 Iterator
@@ -37,6 +43,7 @@ public class FilmDemo {
         //简化方法三
 //        cll.forEach(film -> System.out.println(film));
         //简化方式三
-        cll.forEach(System.out::println);
+//        cll.forEach(System.out::println);
+        cll1.forEach(System.out::println);
     }
 }
