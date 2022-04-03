@@ -21,6 +21,11 @@ public class FilmDemo {
         cll1.add(new Film("火影","乌漆嘛黑拿呢托",9.8));
         cll1.add(new Film("死神","一护",9.7));
 
+        Collection<Film> cll2 = new HashSet<>();
+        cll2.add(new Film("海贼王","路飞",9.9));
+        cll2.add(new Film("火影","乌漆嘛黑拿呢托",9.8));
+        cll2.add(new Film("死神","一护",9.7));
+
         //遍历集合的三种方式
         //方式一：迭代器 Iterator
 //        Iterator<Film> it = cll.iterator();
@@ -45,5 +50,6 @@ public class FilmDemo {
         //简化方式三
 //        cll.forEach(System.out::println);
         cll1.forEach(System.out::println);
+        cll2.forEach(System.out::println);
     }
 }
