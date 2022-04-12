@@ -1,9 +1,6 @@
 package main.java.employee.CollectionCase;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.*;
 import java.util.function.Consumer;
 
 /*
@@ -25,6 +22,8 @@ public class FilmDemo {
         cll2.add(new Film("海贼王","路飞",9.9));
         cll2.add(new Film("火影","乌漆嘛黑拿呢托",9.8));
         cll2.add(new Film("死神","一护",9.7));
+
+        //不可变集合
 
         //遍历集合的三种方式
         //方式一：迭代器 Iterator
