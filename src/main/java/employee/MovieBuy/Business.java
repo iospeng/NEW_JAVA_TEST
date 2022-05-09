@@ -3,8 +3,6 @@ package main.java.employee.MovieBuy;
     商家类，继承User类
  */
 
-import main.java.employee.MovieBuy.AllInterface.AllIntercaces;
-
 import java.util.function.Consumer;
 
 public class Business extends User {
