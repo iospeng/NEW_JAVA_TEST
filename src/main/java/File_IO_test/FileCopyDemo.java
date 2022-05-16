@@ -40,13 +40,14 @@ public class FileCopyDemo {
 //                e.printStackTrace();
 //            }
 //        }
-        // jdk7之后的支援释放方式，支援自动释放
+        // jdk7之后的资源释放方式，资源自动释放
         try (
                //这里只能放置资源对象，用完会自动关闭，自动调用资源对象的close方法释放资源（即使出现异常，也会关闭）
                 //创建输入流，读取数据
              InputStream is = new FileInputStream("D:\\Download\\TGP\\tpf_ui\\res\\dl\\tgp\\bt\\449.jpg");
              //创建输出流，写入数据
-             OutputStream os = new FileOutputStream("F:\\img\\1.jpg");)
+             OutputStream os = new FileOutputStream("F:\\img\\1.jpg");
+             )
         {
             //创建字节数组转移文件
             byte [] bytes = new byte[1024];
