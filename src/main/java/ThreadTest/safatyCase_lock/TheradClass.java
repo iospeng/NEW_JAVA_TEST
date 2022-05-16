@@ -1,9 +1,9 @@
-package main.java.ThreadTest.safatyCase;
+package main.java.ThreadTest.safatyCase_lock;
 
 public class TheradClass extends Thread {
     private Account acc;
 
-    public TheradClass(Account acc,String name) {
+    public TheradClass(Account acc, String name) {
         super(name);
         this.acc = acc;
     }
