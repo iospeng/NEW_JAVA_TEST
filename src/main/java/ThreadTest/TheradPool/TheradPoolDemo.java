@@ -3,8 +3,9 @@ package main.java.ThreadTest.TheradPool;
 import java.util.concurrent.*;
 
 /**
- * 创建线程池的集中方式
+ * 创建线程池的几中方式
  * 方式一：
+ * 线程池处理Runnable任务
  * 使用ExecutorService的实现类ThreadPoolExecutor创建一个线程池对象
  * ThreadPollExecutor构造器的参数说明
  *      ThreadPollExecutor(int corePoolSize,
@@ -37,7 +38,7 @@ import java.util.concurrent.*;
  *      List<Runnable> shutdownNow()：立刻关闭，停止正在执行的任务，，并返回队列中未执行的任务
  */
 
-public class TheradPollDemo {
+public class TheradPoolDemo {
     public static void main(String[] args) {
         //创建线程池
     /*
