@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * 解决线程安全问题的几种方式
- * 方法三：Lock锁（了解）
+ * 方法三：Lock锁
  * api
  * lock()：上锁
  * unlock()：解锁
