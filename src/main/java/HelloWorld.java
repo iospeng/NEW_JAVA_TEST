@@ -17,8 +17,9 @@ import java.io.IOException;
 
 public class HelloWorld {
     static int a = 1;
-
     public static void main(String[] args) throws IOException {
+
+
 //        System.out.println("Hello World");
 //        System.out.println("修改前的a: " + a);
 //        a = 2;
@@ -119,11 +120,13 @@ public class HelloWorld {
 //        MyTreeClient mtc = new MyTreeClient();
 //        mtc.treeClient();
         //单例
-        hungrySingleInstence hsi = hungrySingleInstence.hsi;
-        hsi.print();
-        lazySingleInstence lsi = lazySingleInstence.getLazy();
-        lsi.print();
-        //静态代码块的使用
-        StaticCodeBlock scb = new StaticCodeBlock();
+//        hungrySingleInstence hsi = hungrySingleInstence.hsi;
+//        hsi.print();
+//        lazySingleInstence lsi = lazySingleInstence.getLazy();
+//        lsi.print();
+//        //静态代码块的使用
+//        StaticCodeBlock scb = new StaticCodeBlock();
+
+        System.out.println("5"+2);
     }
 }
